@@ -1,0 +1,90 @@
+.MemoryGrid__wrapper * {
+    box-sizing: border-box;
+}
+.MemoryGrid__wrapper {
+    position: relative;
+    padding: 15px;
+    width: 1400px;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    font-family: Avenir, Helvetica, sans-serif;
+}
+.MemoryGrid__memory-element {
+    margin-bottom: 50px;
+}
+.MemoryGrid__memory-element.image-memory {
+    margin-top: 75px;
+}
+.MemoryGrid__memory-element.text-memory .MemoryGrid__memory-text {
+    max-width: 1000px;
+}
+.MemoryGrid__memory-text {
+    position: relative;
+    padding: 25px;
+    font-size: 18px;
+    line-height: 1.75;
+    order: 1;
+    max-width: 600px;
+    /* border-bottom: 2px solid black; */
+    z-index: 0;
+}
+.MemoryGrid__memory-text:after {
+    /* content: ''; */
+    position: absolute;
+    left: 27px;
+    bottom: 0px;
+    height: 25px;
+    width: 2px;
+    background-color: black;
+}
+.MemoryGrid__image {
+    display: none;
+    width: 100%;
+    opacity: 0;
+    transition: 0.5s ease opacity;
+}
+.MemoryGrid__image-wrapper {
+    position: relative;
+    max-width: 800px;
+    margin-bottom: 25px;
+    order: 0;
+    flex: 1;
+    z-index: 1;
+}
+.MemoryGrid__image.displayed {
+    display: block;
+}
+.MemoryGrid__image.showing {
+    opacity: 1;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .MemoryGrid__memory-text {
+        z-index: 0;
+        box-shadow: -81px 140px 112px 0px rgba(219,219,219,1);
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .MemoryGrid__wrapper {
+        padding: 50px;
+    }
+    .MemoryGrid__memory-text {
+        padding: 50px;
+        font-size: 24px;
+        line-height: 2;
+    }
+    .MemoryGrid__memory-element {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .MemoryGrid__image-wrapper {
+        margin: 50px 0px;
+    }
+    .MemoryGrid__memory-element:nth-child(2n) .MemoryGrid__image-wrapper {
+        order: 2;
+    }
+}
