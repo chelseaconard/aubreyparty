@@ -1,0 +1,263 @@
+.MemoryUploader__wrapper * {
+    box-sizing: border-box;
+}
+.PhotoUploader__wrapper {
+    position: relative;
+    width: 100%;
+    border: 2px dashed #c5c5c5;
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+.PhotoUploader__uploader {
+    position: relative;
+    width: 100%;
+    padding: 100px 50px;
+}
+.PhotoUploader__uploader.dragged {
+    background-color: #f6fbff;
+}
+.PhotoUploader__uploader.dragged .PhotoUploader__content {
+    pointer-events: none;
+}
+.PhotoUploader__wrapper.hidden {
+    display: none;
+}
+
+.PhotoUploader__content {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.PhotoUploader__confirmation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    visibility: hidden;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Avenir, Helvetica, sans-serif;
+    z-index: 15;
+}
+.PhotoUploader__confirmation:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #0f0f0f;
+    opacity: 0;
+    content: '';
+    z-index: 0;
+}
+.PhotoUploader__confirmation.showing {
+    visibility: visible;
+    pointer-events: initial;
+}
+.PhotoUploader__confirmation.showing:before {
+    opacity: 0.25;
+}
+
+.PhotoUploader__confirmation-content {
+    padding: 50px;
+    border-radius: 5px;
+    background-color: white;
+    width: 600px;
+    max-width: 100%;
+    max-height: 80vh;
+    z-index: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+.PhotoUploader__image-preview__wrapper {
+    max-width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+.PhotoUploader__image-preview {
+    max-width: 100%;
+    max-height: 50vh;
+}
+.PhotoUploader__confirmation-message {
+    margin: 25px 0px;
+    line-height: 1.75;
+    text-align: left;
+}
+.PhotoUploader__button.confirm {
+    padding: 1.25em 1.75em;
+    background-color: cornflowerblue;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    border: none;
+    font-weight: 500;
+    margin-right: 15px;
+    font-size: 10px;
+}
+.PhotoUploader__button.deny,
+.MemoryUploader__cta-deny {
+    padding: 1.25em 1.75em;
+    color: #0f0f0f;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    border: none;
+    font-weight: 500;
+    background: none;
+    font-size: 10px;
+}
+
+.PhotoUploader__cta {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.MemoryUploader__wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    visibility: hidden;
+    pointer-events: none;
+    font-family: Avenir, Helvetica, sans-serif;
+    z-index: 10;
+}
+.MemoryUploader__background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: black;
+    opacity: 0.25;
+}
+.MemoryUploader__wrapper.showing {
+    visibility: visible;
+    pointer-events: initial;
+}
+.MemoryUploader__content {
+    position: absolute;
+    width: 500px;
+    max-width: calc(100% - 50px);
+    padding: 25px;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.MemoryUploader__memory-text {
+    margin-top: 25px;
+}
+.MemoryUploader__memory-label {
+    display: block;
+    margin-bottom: 15px;
+}
+.MemoryUploader__memory-textarea {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    padding: 25px;
+    border: 2px solid #c5c5c5;
+}
+.MemoryUploader__cta-wrapper {
+    margin-top: 25px;
+}
+.MemoryUploader__cta {
+    padding: 1.25em 1.75em;
+    background-color: cornflowerblue;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    font-size: 10px;
+}
+.MemoryUploader__fab {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    width: 200px;
+    transform: translateX(-50%);
+    height: 50px;
+    background-color: cornflowerblue;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    font-weight: 500;
+    z-index: 10;
+}
+.MemoryUploader__fab.hidden {
+    visibility: hidden;
+    pointer-events: none;
+}
+.MemoryUploader__preview-image__wrapper {
+    position: relative;
+    display: none;
+    width: 100%;
+    height: 295px;
+    padding: 10px;
+    background: #eeeeee;
+}
+.MemoryUploader__preview-image__wrapper:after {
+    content: 'Clear Image';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0, 0.5);
+    opacity: 0;
+    transition: 0.25s ease opacity;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    font-size: 10px;
+    cursor: pointer;
+}
+.MemoryUploader__preview-image__wrapper:hover:after {
+    opacity: 1;
+}
+.MemoryUploader__preview-image__wrapper.showing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.MemoryUploader__preview-image__wrapper img {
+    max-height: 100%;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+button {
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+    .PhotoUploader__button.deny,
+    .MemoryUploader__cta-deny,
+    .PhotoUploader__button.confirm,
+    .MemoryUploader__cta {
+        font-size: 12px;
+    }
+}

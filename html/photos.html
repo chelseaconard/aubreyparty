@@ -1,1 +1,81 @@
-Photos
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../css/MemoryUploader.css">
+        <link rel="stylesheet" href="../css/MemoryGrid.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="MemoryGrid__wrapper">
+            <div class="MemoryGrid__grid">
+
+            </div>
+        </div>
+        <button class="MemoryUploader__fab">Add a memory</button>
+        <div class="MemoryUploader__wrapper">
+            <div class="MemoryUploader__background"></div>
+            <div class="MemoryUploader__content">
+                <div class="PhotoUploader__wrapper">
+                    <div class="PhotoUploader__uploader">
+                        <div class="PhotoUploader__content">
+                            <p class="PhotoUploader__description">Drag your favorite photo of Aubrey or click the button below to select one.</p>
+                            <input type="file" class="PhotoUploader__cta" value="Select a Photo">
+                        </div>
+                    </div>
+                </div>
+                <div class="MemoryUploader__preview-image__wrapper"></div>
+                <div class="MemoryUploader__memory-text">
+                    <label class="MemoryUploader__memory-label">Add your memory here</label>
+                    <textarea class="MemoryUploader__memory-textarea"></textarea>
+                </div>
+                <div class="MemoryUploader__cta-wrapper">
+                    <button class="MemoryUploader__cta">Add Your Memory</button>
+                    <button class="MemoryUploader__cta-deny">Cancel</button>
+                </div>
+            </div>
+        </div>
+        <div class="PhotoUploader__confirmation">
+            <div class="PhotoUploader__confirmation-content">
+                <div class="PhotoUploader__image-preview__wrapper"></div>
+                <div class="PhotoUploader__confirmation-message">Make sure this is the photo you wanted to upload.</div>
+                <div class="PhotoUploader__actions-wrapper">
+                    <button class="PhotoUploader__button confirm">Confirm</button>
+                    <button class="PhotoUploader__button deny">Cancel</button>
+                </div>
+            </div>
+        </div>
+        
+        <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-storage.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-firestore.js"></script>
+        <script>
+            var firebaseConfig = {
+                apiKey: "AIzaSyBpQkBFFaM81E43kSjX6hg-LB--4S5dJeM",
+                authDomain: "aubrey-s-photo-wall.firebaseapp.com",
+                databaseURL: "https://aubrey-s-photo-wall.firebaseio.com",
+                projectId: "aubrey-s-photo-wall",
+                storageBucket: "aubrey-s-photo-wall.appspot.com",
+                messagingSenderId: "201011707802",
+                appId: "1:201011707802:web:ab325ab5a3d6af77b88423",
+                measurementId: "G-H9LWBK5QKY"
+            };
+            firebase.initializeApp(firebaseConfig);
+
+            // Get a reference to the storage service, which is used to create references in your storage bucket
+            var storage = firebase.storage();
+        </script>
+        <script src="../js/MemoryUploader.js"></script>
+        <script src="../js/MemoryGrid.js"></script>
+        <script src="../js/PhotoUploader.js"></script>
+    </body>
+</html>
