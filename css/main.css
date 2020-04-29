@@ -5,14 +5,14 @@ body {
 }
 
 #topbar {
-    background-color:thistle;
+    background-color: #DAF7A6;
     width: 100%;
     height: 67px;
     color: white;
 }
 
 #titlebar {
-    background-color:lightgoldenrodyellow;
+    background-color: #f4d03f;
     width: 100%;
     height: 80px;
     color: white;
@@ -26,7 +26,7 @@ body {
 
 #titleheader {
     font-size: 3em;
-    color: lightsalmon;
+    color: #f8c471;
 
 }
 
