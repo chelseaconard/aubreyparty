@@ -36,14 +36,44 @@
         </div>
 
     <div class="fixedwidth">
+        
         <h1>Thoughts for Next Year</h1>
     
         <h2>What are your ideas for next year's theme?</h2>
-        <textarea>...</textarea>
+        <form id="form">
+        <textarea id="themeText" cols="50" rows="10" placeholder="..."></textarea>
         <br /><br />
     <input type="submit" value="submit"/>
         </form>
     </div>
 </body>
+<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-firestore.js"></script>
+<script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyBpQkBFFaM81E43kSjX6hg-LB--4S5dJeM",
+        authDomain: "aubrey-s-photo-wall.firebaseapp.com",
+        databaseURL: "https://aubrey-s-photo-wall.firebaseio.com",
+        projectId: "aubrey-s-photo-wall",
+        storageBucket: "aubrey-s-photo-wall.appspot.com",
+        messagingSenderId: "201011707802",
+        appId: "1:201011707802:web:ab325ab5a3d6af77b88423",
+        measurementId: "G-H9LWBK5QKY"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    // Get a reference to the storage service, which is used to create references in your storage bucket
+    var storage = firebase.storage();
+</script>
+<script src="../js/ThemeUploader.js"></script>
+<script>
+    const logSubmit = (event) => {
+        const textArea = document.getElementById('themeText')
+        uploadThemeIdea(textArea.value)
+    }
+    const form = document.getElementById('form');
+    form.addEventListener('submit', logSubmit);
+</script>
 </html>
 

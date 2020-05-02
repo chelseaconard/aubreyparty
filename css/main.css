@@ -22,6 +22,7 @@ body {
     margin: 0;
     padding: 0;
     padding-top: 10px;
+    text-align: center;
 }
 
 #titleheader {
@@ -33,13 +34,14 @@ body {
 .fixedwidth {
     width:1050px;
     margin: 0 auto;
+    padding: 0 10px;
     background-color: #bed09f
 }
 
 #photodiv {
     padding-top: 5px;
     float: left;
-    border-right: 1px solid #789e4f;
+    border-right: 1px solid #990000;
     padding-right: 20px;
 }
 
